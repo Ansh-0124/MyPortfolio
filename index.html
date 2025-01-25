@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ansh Porwal's Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+    </head>
+    
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Ansh Porwal's Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    
+
+    <section id="about">
+        <div class="container about-section">
+            <!-- Photo on the left -->
+            <img src="myphoto.jpg" alt="Ansh Porwal">
+            
+            <!-- Content on the right -->
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    I am a motivated and results-driven B.Tech 2nd-year Computer Science Engineering student with a strong foundation in web development, UI/UX, AI/ML, and competitive programming. I actively participate in hackathons and extracurricular activities and am passionate about event management. My hobbies include football and chess, enhancing my strategic thinking.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>C/C++</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Frontend Web Development</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-python"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Git/Github</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>MySQL</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>DSA</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>SRM Institute of Science and Technology, Delhi-NCR Campus</strong> (May 2023 - Present)
+                    <p>Bachelors in Technology, Computer Science and Engineering</p>
+                </li>
+                <li>
+                    <strong>Shemford Futuristic K12 School, Auraiya, U.P</strong> (2022)
+                    <p>Intermediate</p>
+                </li>
+                <li>
+                    <strong>Shemford Futuristic K12 School, Auraiya, U.P</strong> (2020)
+                    <p>High School</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:anshshiva51@gmail.com">anshshiva51@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> Phone: <a href="tel:+916395430365">6395430365</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: Delhi, India</p>
+            <p>
+                <a href="https://www.linkedin.com/in/ansh-porwal-0a18b8274/" target="_blank" style="text-decoration: none; color: #0077b5;">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                &nbsp;&nbsp;
+                <a href="https://github.com/Ansh-0124" target="_blank" style="text-decoration: none; color: #000;">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </p>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ansh Porwal. All rights reserved.</p>
+        </div>
+    </footer>
+    <<script>
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Shrink Header on Scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+    
+        // Highlight Active Section in Navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+    
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 60;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+    
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    
+        // Back-to-Top Button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'backToTop';
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTopBtn.style.display = 'none';
+        document.body.appendChild(backToTopBtn);
+    
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+    
+        // Dark Mode Toggle
+        const darkModeToggle = document.createElement('button');
+        darkModeToggle.id = 'darkModeToggle';
+        darkModeToggle.innerText = '🌙';
+        darkModeToggle.style.position = 'fixed';
+        darkModeToggle.style.bottom = '80px';
+        darkModeToggle.style.right = '20px';
+        darkModeToggle.style.background = '#283593';
+        darkModeToggle.style.color = '#fff';
+        darkModeToggle.style.border = 'none';
+        darkModeToggle.style.borderRadius = '50%';
+        darkModeToggle.style.width = '50px';
+        darkModeToggle.style.height = '50px';
+        darkModeToggle.style.fontSize = '1.5rem';
+        darkModeToggle.style.cursor = 'pointer';
+        document.body.appendChild(darkModeToggle);
+    
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerText = '☀️';
+            } else {
+                darkModeToggle.innerText = '🌙';
+            }
+        });
+    </script>
+    
+</body>
+</html>
